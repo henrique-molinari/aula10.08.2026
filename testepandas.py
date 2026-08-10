@@ -12,14 +12,15 @@ data = {
 df = pd.DataFrame(data)
 # print(df)
 
-# Primeiras linhas
-print(df.head(2))
+# Selecionar uma coluna
+print(df["Nome"])
 
-# Últimas linhas
-print(df.tail(2))
+# Selecionar múltiplas colunas
+print(df[["Nome", "Idade"]])
 
-# Informações do DataFrame
-print(df.info())
+# Selecionar linhas por índice
+print(df.iloc[1])  # Segunda linha
+print(df.iloc[1:3])  # Linhas 2 e 3
 
-# Estatísticas descritivas
-print(df.describe())
+# Selecionar por condição
+print(df[df['Idade'] > 25])
