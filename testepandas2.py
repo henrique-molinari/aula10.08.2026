@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 
-# Criar DataFrame com valores ausentes
+
 df_nulos = pd.DataFrame(
     {"A": [1, 2, np.nan, 4], "B": [5, np.nan, np.nan, 8], "C": [10, 20, 30, 40]}
 )
@@ -17,19 +17,4 @@ print(df_nulos.dropna())
 # Preencher valores nulos
 print(df_nulos.fillna(value=0))
 
-# ==OPERACOES AGREGADAS==
-
-df = {
-    "Nome": ["Ana", "Carlos", "Maria", "João"],
-    "Idade": [25, 30, 28, 22],
-    "Cidade": ["SP", "RJ", "BH", "POA"],
-}
-
-# Soma
-print(df["Idade"].sum())
-
-# Média
-print(df["Idade"].mean())
-
-# Agrupamento
-print(df.groupby("Cidade")["Idade"].mean())
+print(df_nulos)
