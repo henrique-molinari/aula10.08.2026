@@ -11,3 +11,6 @@ data = {
 
 df = pd.DataFrame(data)
 print(df)
+
+# Primeiras linhas
+print(df.head(2))
