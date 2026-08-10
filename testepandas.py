@@ -2,6 +2,12 @@
 
 import pandas as pd
 
-# Criando uma Series
-s = pd.Series([1, 3, 5, 7, 9])
-print(s)
+# Criando um DataFrame
+data = {
+    'Nome': ['Ana', 'Carlos', 'Maria', 'João'],
+    'Idade': [25, 30, 28, 22],
+    'Cidade': ['SP', 'RJ', 'BH', 'POA']
+}
+
+df = pd.DataFrame(data)
+print(df)
