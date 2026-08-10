@@ -32,3 +32,7 @@ print(df)
 # Remover coluna
 df = df.drop('Salário', axis=1)
 print(df)
+
+# Renomear colunas
+df = df.rename(columns={'Cidade': 'Cidade'})
+print(df)
