@@ -12,6 +12,10 @@ data = {
 df = pd.DataFrame(data)
 # print(df)
 
+# Adicionar nova coluna
+df['Salário'] = [5000, 6000, 5500, 4500]
+print(df)
+
 # Selecionar uma coluna
 print(df["Nome"])
 
