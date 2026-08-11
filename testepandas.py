@@ -20,8 +20,15 @@ print(df["Idade"].mean())
 print(df.groupby("Cidade")["Idade"].mean())
 
 # Salvar para CSV
-df.to_csv('dados.csv', index=False)
+# df.to_csv('dados.csv', index=False)
 
 # Carregar de CSV
-df_csv = pd.read_csv('dados.csv')
+df_csv = pd.read_csv("dados.csv")
 print(df_csv.head())
+
+# Salvar para Excel
+df.to_excel('dados.xlsx', index=False)
+
+# Carregar de Excel
+df_excel = pd.read_excel('dados.xlsx')
+print(df_excel.head())
