@@ -22,3 +22,6 @@ print(df.groupby("Cidade")["Idade"].mean())
 # Salvar para CSV
 df.to_csv('dados.csv', index=False)
 
+# Carregar de CSV
+df_csv = pd.read_csv('dados.csv')
+print(df_csv.head())
