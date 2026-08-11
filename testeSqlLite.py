@@ -14,4 +14,15 @@ CREATE TABLE IF NOT EXISTS dados (
 """)
 print("Tabela criada com sucesso para integração!")
 conexao.close()
-    
+
+# CREATE
+def adicionar_dado(fonte, dado):
+    conexao = sqlite3.connect("integracao_dados.db")
+    cursor = conexao.cursor()
+    cursor.execute("INSERT INTO dados (fonte, dado) VALUES (?, ?)", (fonte, dado))
+    conexao.commit()
+    print(f"Dado da fonte {fonte} adicionado com sucesso!")
+    conexao.close()
+
+# Exemplo de uso:
+adicionar_dado("API Externa", '{"nome": "Max", "idade": 30}')
