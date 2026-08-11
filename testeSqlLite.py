@@ -1,3 +1,5 @@
+# python testeSqlLite.py
+
 import sqlite3
 
 # Criar ou conectar ao banco local
@@ -25,4 +27,7 @@ def adicionar_dado(fonte, dado):
     conexao.close()
 
 # Exemplo de uso:
-adicionar_dado("API Externa", '{"nome": "Max", "idade": 30}')
+adicionar_dado("API Externa", '{"nome": "João", "idade": 35}')
+adicionar_dado("API Externa", '{"nome": "Maria", "idade": 20}')
+adicionar_dado("API Externa", '{"nome": "Pedro", "idade": 60}')
+adicionar_dado("API Externa", '{"nome": "Antonio", "idade": 50}')
