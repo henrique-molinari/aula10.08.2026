@@ -26,8 +26,15 @@ def adicionar_dado(fonte, dado):
     print(f"Dado da fonte {fonte} adicionado com sucesso!")
     conexao.close()
 
+
+def listar_dados():
+    conexao = sqlite3.connect("integracao_dados.db")
+    cursor = conexao.cursor()
+    cursor.execute("SELECT * FROM dados")
+    registros = cursor.fetchall()
+    for registro in registros:
+        print(registro)
+    conexao.close()
+
 # Exemplo de uso:
-adicionar_dado("API Externa", '{"nome": "João", "idade": 35}')
-adicionar_dado("API Externa", '{"nome": "Maria", "idade": 20}')
-adicionar_dado("API Externa", '{"nome": "Pedro", "idade": 60}')
-adicionar_dado("API Externa", '{"nome": "Antonio", "idade": 50}')
+listar_dados()
