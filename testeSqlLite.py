@@ -38,3 +38,14 @@ def listar_dados():
 
 # Exemplo de uso:
 listar_dados()
+
+def atualizar_dado(id, nova_fonte, novo_dado):
+    conexao = sqlite3.connect("integracao_dados.db")
+    cursor = conexao.cursor()
+    cursor.execute("UPDATE dados SET fonte = ?, dado = ? WHERE id = ?", (nova_fonte, novo_dado, id))
+    conexao.commit()
+    print(f"Dado de ID {id} atualizado com sucesso!")
+    conexao.close()
+
+# Exemplo de uso:
+atualizar_dado(1, "Fonte Atualizada", '{"nome": "Maximilian", "idade": 31}')
