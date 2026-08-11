@@ -14,20 +14,37 @@ from tinydb import TinyDB
 # usuarios = db.table('usuarios')
 # produtos = db.table('produtos')
 
-print("Tabelas criadas com sucesso!")
+# print("Tabelas criadas com sucesso!")
 
 
-def adicionar_usuario(nome, idade):
-    usuarios = TinyDB("dados.json").table("usuarios")
-    usuarios.insert({"nome": nome, "idade": idade})
-    print(f"Usuário {nome} adicionado com sucesso!")
+# def adicionar_usuario(nome, idade):
+#     usuarios = TinyDB("dados.json").table("usuarios")
+#     usuarios.insert({"nome": nome, "idade": idade})
+#     print(f"Usuário {nome} adicionado com sucesso!")
 
 
-def adicionar_produto(nome, preco):
-    produtos = TinyDB("dados.json").table("produtos")
-    produtos.insert({"nome": nome, "preco": preco})
-    print(f"Produto {nome} adicionado com sucesso!")
+# def adicionar_produto(nome, preco):
+#     produtos = TinyDB("dados.json").table("produtos")
+#     produtos.insert({"nome": nome, "preco": preco})
+#     print(f"Produto {nome} adicionado com sucesso!")
+
+# # Exemplo de uso:
+# adicionar_usuario("Max", 30)
+# adicionar_produto("Notebook", 2500)
+
+
+def listar_usuarios():
+    usuarios = TinyDB('dados.json').table('usuarios')
+    print("Usuários cadastrados:")
+    for usuario in usuarios.all():
+        print(usuario)
+
+def listar_produtos():
+    produtos = TinyDB('dados.json').table('produtos')
+    print("Produtos cadastrados:")
+    for produto in produtos.all():
+        print(produto)
 
 # Exemplo de uso:
-adicionar_usuario("Max", 30)
-adicionar_produto("Notebook", 2500)
+listar_usuarios()
+listar_produtos()
