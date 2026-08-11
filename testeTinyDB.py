@@ -2,6 +2,8 @@
 
 from tinydb import TinyDB
 
+from tinydb import Query
+
 # # Criar banco de dados de teste
 # db = TinyDB('teste.json')
 # print("TinyDB instalado e funcionando corretamente!")
@@ -46,5 +48,26 @@ def listar_produtos():
         print(produto)
 
 # Exemplo de uso:
+listar_usuarios()
+listar_produtos()
+
+def atualizar_usuario(nome, nova_idade):
+    usuarios = TinyDB('dados.json').table('usuarios')
+    query = Query()
+    usuarios.update({'idade': nova_idade}, query.nome == nome)
+    print(f"Usuário {nome} atualizado com sucesso!")
+
+def atualizar_produto(nome, novo_preco):
+    produtos = TinyDB('dados.json').table('produtos')
+    query = Query()
+    produtos.update({'preco': novo_preco}, query.nome == nome)
+    print(f"Produto {nome} atualizado com sucesso!")
+
+# Exemplo de uso:
+atualizar_usuario("Max", 31)
+atualizar_produto("Notebook", 2600)
+
+print("\n")
+
 listar_usuarios()
 listar_produtos()
